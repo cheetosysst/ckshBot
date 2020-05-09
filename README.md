@@ -6,7 +6,12 @@
 
 ## 說明
 ### 結構
-(有待補齊)
+├── main.py 主要檔，使用時以 python3 執行
+├── README.md 沒有人會認真讀的東西
+└── school 這個套件裡面包含大部分會用到的工具類別
+    ├── __init__.py
+    ├── school.py 取得 html
+    └── soup.py 處裡 html
 
 ### 用法
 (有待補齊)
