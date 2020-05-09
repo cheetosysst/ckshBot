@@ -1,5 +1,4 @@
-import re
-import requests
+import requests as req
 
 class school():
     def school(self):
@@ -13,7 +12,10 @@ class school():
         self.officeCode = officeCode
 
     def getData(self):
-        # TODO
-
+        r = req.get("https://www2.cksh.tp.edu.tw/category/news/?officeID="+str(self.officeCode))
+        if r.status_code == 200:
+            data = r.text
+        else:
+            data = 1
         return data
 
