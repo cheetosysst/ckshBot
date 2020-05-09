@@ -35,6 +35,7 @@ class soup():
                 "unit": resUnit[i].text,
                 "view": resView[i].text,
                 "urgent": True if "急件" in resSubject[i].text else False,
+                "important": True if "重要" in resSubject[i].text else False,
                 "subject": resSubject[i].text,
                 "url": resUrl[i]
                 })
