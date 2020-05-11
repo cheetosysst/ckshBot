@@ -16,7 +16,14 @@ botSchool
     └── soup.py 處裡 html
 ```
 ### 用法
-(有待補齊)
+目前處在開發階段， main.py 的用法之後會有很多變動，使用前請多看幾眼 readme.md。
+```bash
+# 相依安裝
+pip3 install bs4
+
+# 執行
+python3 main.py
+```
 
 ## 同性質專案
 ### [cksh-post](https://github.com/simba-fs/cksh-post)
