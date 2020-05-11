@@ -20,3 +20,6 @@
 ## 同性質專案
 ### [cksh-post](https://github.com/simba-fs/cksh-post)
 32 屆網管 simba-fs 開發的類似專案，使用node.js。
+
+## 注意事項
+- .gitignore 檔案來自 GitHub 範例
