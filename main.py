@@ -4,6 +4,7 @@
 from school.school import school
 from school.soup import soup
 import json
+from os import path
 
 sc = school()
 so = soup()
@@ -15,8 +16,14 @@ raw = sc.getData()
 so.parseRaw(raw)
 so.processRaw()
 #print(so.getData())
-with open('data.json', 'w') as file:
-	json.dump(so.getData(), file,indent=4)
-    
 
-
+if path.exists("data.json") and path.getsize("data.json") > 0:
+	f = open('data.json','r+')
+	data = json.loads(f.read())
+	for i in so.getData():
+		if i not in data:
+			data.append(i)
+	json.dump(data, f, indent = 4)
+else:
+	f = open('data.json','w')
+	json.dump(so.getData(), f, indent = 4)
