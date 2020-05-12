@@ -18,12 +18,12 @@ so.processRaw()
 #print(so.getData())
 
 if path.exists("data.json") and path.getsize("data.json") > 0:
-	f = open('data.json','r+')
+	f = open('data.json', 'r+')
 	data = json.loads(f.read())
 	for i in so.getData():
 		if i not in data:
 			data.append(i)
 	json.dump(data, f, indent = 4)
 else:
-	f = open('data.json','w')
+	f = open('data.json', 'w')
 	json.dump(so.getData(), f, indent = 4)
