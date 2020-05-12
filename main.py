@@ -3,6 +3,7 @@
 
 from school.school import school
 from school.soup import soup
+import json
 
 sc = school()
 so = soup()
@@ -14,7 +15,8 @@ raw = sc.getData()
 so.parseRaw(raw)
 so.processRaw()
 #print(so.getData())
-for i in so.getData():
-    print(i)
+with open('data.json', 'w') as file:
+	json.dump(so.getData(), file,indent=4)
+    
 
 
