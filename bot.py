@@ -4,7 +4,10 @@ import json
 from os import path
 import time
 
+sc = school()
 sc.setOffice(53)
+
+so = soup()
 
 while (True):
 	check()
@@ -20,6 +23,7 @@ def check():
 		for i in so.getData():
 			if i not in data:
 				data.append(i)
+                                
 		json.dump(data, f, indent = 4)
 	else:
 		f = open('data.json', 'w')
