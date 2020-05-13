@@ -1,14 +1,16 @@
+# This file is under construction
+
+# Library
 from school.school import school
 from school.soup import soup
 import json
 from os import path
 import time
 
+# Objects and setting
 sc = school()
 sc.setOffice(53)
-
 so = soup()
-
 
 def check():
 	raw = sc.getData()
@@ -27,7 +29,6 @@ def check():
 		print("[] else")
 		f = open('data.json', 'w')
 		json.dump(so.getData(), f, indent = 4)
-
 
 while (True):
 	check()
