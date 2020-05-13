@@ -9,9 +9,6 @@ sc.setOffice(53)
 
 so = soup()
 
-while (True):
-	check()
-	sleep(3600)
 
 def check():
 	raw = sc.getData()
@@ -23,8 +20,16 @@ def check():
 		for i in so.getData():
 			if i not in data:
 				data.append(i)
-                                
+				print("**new post**", str(i))
 		json.dump(data, f, indent = 4)
+		print("[] Check done, time is", time.asctime( time.localtime(time.time()) ))
 	else:
+		print("[] else")
 		f = open('data.json', 'w')
 		json.dump(so.getData(), f, indent = 4)
+
+
+while (True):
+	check()
+	time.sleep(60)
+	print("[] sleep ")
