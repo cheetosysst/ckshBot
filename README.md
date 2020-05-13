@@ -5,14 +5,14 @@
 
 ## 說明
 ### 結構
-```
+```bash
 botSchool
-├── main.py 主要檔，使用時以 python3 執行
-├── README.md 沒有人會認真讀的東西
-└── school 這個套件裡面包含大部分會用到的工具類別
-    ├── __init__.py
-    ├── school.py 取得 html
-    └── soup.py 處裡 html
+├── main.py				# 主要檔，使用時以 python3 執行
+├── README.md			# 沒有人會認真讀的東西
+└── school				# 這個套件裡面包含大部分會用到的工具類別
+    ├── __init__.py		# 不是很重要的東西
+    ├── school.py		# 取得 html
+    └── soup.py 		# 處裡 html
 ```
 ### 用法
 目前處在開發階段， main.py 的用法之後會有很多變動，使用前請多看幾眼 readme.md。
