@@ -3,7 +3,7 @@
 
 from school.school import school
 from school.soup import soup
-import json
+# import json
 from os import path
 
 sc = school()
@@ -15,15 +15,19 @@ raw = sc.getData()
 
 so.parseRaw(raw)
 so.processRaw()
-#print(so.getData())
 
-if path.exists("data.json") and path.getsize("data.json") > 0:
-	f = open('data.json', 'r+')
-	data = json.loads(f.read())
-	for i in so.getData():
-		if i not in data:
-			data.append(i)
-	json.dump(data, f, indent = 4)
+if path.exists("data.bt") and path.getsize("data.bt") > 0:
+	f = open('data.bt', 'a+')
+	dateList = []
+	
+	for line in f.readlines():
+		dataList = line.split(";")
+
+
 else:
-	f = open('data.json', 'w')
-	json.dump(so.getData(), f, indent = 4)
+	f = open('data.bt', 'w')
+	for article in so.getData():
+		for content in article:
+			f.write(str(article[content])+";")
+		f.write("\n")
+	f.close()
