@@ -17,11 +17,20 @@ so.parseRaw(raw)
 so.processRaw()
 
 if path.exists("data.bt") and path.getsize("data.bt") > 0:
-	f = open('data.bt', 'a+')
-	dateList = []
-	
+	f = open('data.bt', 'w+')
+	subjectList = []
 	for line in f.readlines():
-		dataList = line.split(";")
+		rawList = line.split(";")
+		subjectList.append(str(rawList[6]))
+		print(f)
+	for article in so.getData():
+		if article["subject"] not in subjectList:
+			for content in article:
+				f.write(str(article[content])+";")
+			f.write("\n")
+		else:
+			print("[] NO!!! You can't just say no new article and output nothing noooo!!! haha error goes brrrrrrr")
+
 
 
 else:
